@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deskripsi Kucing</title>
+    <!-- Hubungkan fontawesome jika belum -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Gaya CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .deskripsi-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 80%;
+            margin-top: 50px; /* Jarak ke atas */
+            margin-bottom: 50px; /* Jarak ke bawah */
+        }
+
+        .judul {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .deskripsi {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .warna-beda {
+            color: #007bff;
+        }
+
+        .column-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kucing-image {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Gaya untuk tombol "Play Suara Kucing" */
+        .play-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .play-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .navigation-button {
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .navigation-button:hover {
+            transform: scale(1.05);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="deskripsi-container">
+        <div class="judul">Deskripsi Kucing Berwarna Hitam</div>
+        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+        <div class="deskripsi">
+            Kucing berwarna hitam adalah salah satu jenis kucing yang memiliki <span class="warna-beda">daya tarik
+                tersendiri</span>. Warna bulunya yang gelap membuatnya terlihat misterius dan elegan. Kucing hitam
+            seringkali dianggap sebagai simbol <span class="warna-beda">keberuntungan</span> di beberapa budaya,
+            meskipun di tempat lain mungkin dianggap <span class="warna-beda">sebaliknya</span>. Tak hanya itu, kucing
+            hitam juga memiliki karakteristik yang menarik, seperti kepintaran tinggi, keahlian berburu yang
+            baik, serta kepribadian yang beragam, dari yang <span class="warna-beda">pendiam</span> hingga yang
+            <span class="warna-beda">manja</span>. Jangan ragu untuk memiliki kucing hitam sebagai hewan
+            peliharaan Anda!
+        </div>
+        <div class="column-container">
+            <!-- Gambar kucing -->
+            <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+    
+            <!-- Tombol "Play Suara Kucing" -->
+            <button class="play-button" onclick="playSuaraKucing()">Putar Suara Kucing</button>
+        </div>
+        <div>
+            <!-- Tombol navigasi ke kiri sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Kembali" onclick="goBack()">
+
+            <!-- Tombol navigasi ke kanan sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Selanjutnya" onclick="goForward()">
+        </div>
+    </div>
+    
+
+    <!-- Elemen audio untuk memutar suara kucing -->
+    <audio id="suaraKucing">
+        <source src="asset/music/" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playSuaraKucing() {
+            const audio = document.getElementById('suaraKucing');
+            audio.play().catch(error => {
+                console.error('Gagal memainkan suara kucing:', error);
+            });
+        }
+        function goBack() {
+            window.history.back();
+        }
+
+        // Function untuk navigasi ke halaman berikutnya
+        function goForward() {
+            window.location.href = "kucing_inggris.html"; // Mengarahkan ke halaman kucing_inggris.html
+        }
+
+        // Function untuk memutar suara kucing
+        function playSuaraKucing() {
+            const audio = document.getElementById('suaraKucing');
+            audio.play().catch(error => {
+                console.error('Gagal memainkan suara kucing:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>

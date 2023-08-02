@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Belajar</title>
+    <style>
+        /* Gaya CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .custom-button {
+            display: inline-block;
+            padding: 0;
+        }
+
+        .custom-button img:hover {
+            transform: scale(1.1); /* Efek scaling saat di-hover */
+        }
+
+        @media (max-width: 768px) {
+            .center-image {
+                width: 80%;
+            }
+
+            .button-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .center-image {
+                width: 100%;
+            }
+
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-container">
+        
+        <div class="button-container">
+            <a href="kucing.html" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 1">
+            </a>
+            <a href="#" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 2">
+            </a>
+            <a href="#" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 3">
+            </a>
+            <a href="#" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 4">
+            </a>
+            <a href="#" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 5">
+            </a>
+            <a href="#" class="custom-button">
+                <img src="asset/gambar/welcome_image.png" alt="Button 6">
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

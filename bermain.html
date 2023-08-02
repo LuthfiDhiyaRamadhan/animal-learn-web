@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Pertanyaan Pilihan Ganda</title>
+    <!-- Hubungkan SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.css">
+    <style>
+        /* Gaya CSS untuk background gambar */
+        body {
+            background-image: url('asset/gambar/background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quiz-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 80%;
+        }
+
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .answer-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .answer-option {
+            padding: 20px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 50%;
+        }
+
+        .answer-option:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <div class="question">Apa ibu kota Indonesia?</div>
+        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+        <div class="answer-container">
+            <button class="answer-option" onclick="checkAnswer(true)">Jakarta</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Surabaya</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Bandung</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Medan</button>
+        </div>
+    </div>
+
+    <!-- Hubungkan SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Benar!',
+                    text: 'Selamat, jawaban Anda benar!',
+                    confirmButtonText: 'Lanjutkan',
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Lanjutkan ke halaman berikutnya (ganti "halaman_berikutnya.html" dengan URL yang sesuai)
+                        window.location.href = "halaman_berikutnya.html";
+                    }
+                });
+                // Suara ketika jawaban benar (ganti "suara_benar.mp3" dengan URL file audio yang sesuai)
+                new Audio('suara_benar.mp3').play();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Salah!',
+                    text: 'Maaf, jawaban Anda salah. Silakan coba lagi!',
+                    confirmButtonText: 'Tutup',
+                    allowOutsideClick: false
+                });
+                // Suara ketika jawaban salah (ganti "suara_salah.mp3" dengan URL file audio yang sesuai)
+                new Audio('suara_salah.mp3').play();
+            }
+        }
+    </script>
+</body>
+
+</html>

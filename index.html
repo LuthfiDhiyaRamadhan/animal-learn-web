@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Tema Hewan</title>
+    <style>
+        /* Gaya CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            animation: slideUpDown 3s infinite alternate;
+        }
+
+        .welcome-image {
+            width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #ff8c00;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ff7f00;
+            transform: scale(1.1);
+        }
+
+        @keyframes slideUpDown {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Gaya untuk tombol "Play Music" di pojok kiri atas */
+        #playButton {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #playButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="welcome-container">
+            <img class="welcome-image" src="asset/gambar/welcome_image.png" alt="Selamat Datang">
+            <a href="menu.html" id="startButton">Mulai</a>
+        </div>
+    </header>
+
+    <!-- Elemen audio untuk memutar musik -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="asset/music/background_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Tombol "Play Music" di pojok kiri atas -->
+    <button id="playButton">▶️</button>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const playButton = document.getElementById('playButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // Function untuk memainkan musik saat tombol "Play" diklik
+        function playMusic() {
+            backgroundMusic.play().catch(error => {
+                // Handle jika musik tidak dapat diplay secara otomatis
+                // Tidak semua browser mengizinkan autoplay tanpa interaksi pengguna
+                console.error('Gagal memainkan musik:', error);
+            });
+            // Sembunyikan tombol "Play" setelah musik dimainkan
+            playButton.style.display = "none";
+        }
+
+        // Tambahkan event listener untuk tombol "Play Music"
+        playButton.addEventListener('click', playMusic);
+    </script>
+</body>
+
+</html>
