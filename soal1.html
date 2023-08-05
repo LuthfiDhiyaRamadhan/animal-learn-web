@@ -81,17 +81,21 @@
             object-fit: cover;
             color: #ffffff;
         }
+        .kucing-image {
+            width: 200px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <!-- Tombol kembali ke menu.html -->
     <div class="back-button" onclick="goBack()">
-        <img src="asset/gambar/welcome_image.png" alt="Kembali">
+        <img src="asset/gambar/homebutton.png" alt="Kembali">
     </div>
     <div class="quiz-container">
         <div class="question">Apakah nama hewan dibawah ini?</div>
-        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+        <img class="kucing-image" src="asset/gambar/Kucing.png" alt="Gambar Kucing">
         <div class="answer-container">
             <button class="answer-option" onclick="checkAnswer(true)">Kucing</button>
             <button class="answer-option" onclick="checkAnswer(false)">Anjing</button>
@@ -121,7 +125,7 @@
                     }
                 });
                 // Suara ketika jawaban benar (ganti "suara_benar.mp3" dengan URL file audio yang sesuai)
-                new Audio('suara_benar.mp3').play();
+                new Audio('asset/music/benar.mp3').play();
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -131,7 +135,7 @@
                     allowOutsideClick: false
                 });
                 // Suara ketika jawaban salah (ganti "suara_salah.mp3" dengan URL file audio yang sesuai)
-                new Audio('suara_salah.mp3').play();
+                new Audio('asset/music/salah.mp3').play();
             }
         }
     </script>

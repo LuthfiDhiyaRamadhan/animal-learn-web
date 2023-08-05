@@ -29,7 +29,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            max-width: 1000px;
+            max-width: 1500px;
             width: 80%;
             margin-top: 50px; /* Jarak ke atas */
             margin-bottom: 50px; /* Jarak ke bawah */
@@ -43,8 +43,9 @@
         }
 
         .deskripsi {
-            font-size: 18px;
+            font-size: 24px;
             color: #333;
+            
             margin-bottom: 20px;
         }
 
@@ -72,7 +73,7 @@
             text-decoration: none;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 24px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: transform 0.2s ease;
@@ -87,8 +88,9 @@
             text-decoration: none;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
-            
+            font-size: 5px;
+            width: 400px;
+            height: 350px;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
@@ -102,38 +104,31 @@
 
 <body>
     <div class="deskripsi-container">
-        <div class="judul">Deskripsi Kucing Berwarna Hitam</div>
-        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+        <div class="judul">Deskripsi Kucing</div>
+        <img class="kucing-image" src="asset/gambar/Kucing.png" alt="Gambar Kucing">
         <div class="deskripsi">
-            Kucing berwarna hitam adalah salah satu jenis kucing yang memiliki <span class="warna-beda">daya tarik
-                tersendiri</span>. Warna bulunya yang gelap membuatnya terlihat misterius dan elegan. Kucing hitam
-            seringkali dianggap sebagai simbol <span class="warna-beda">keberuntungan</span> di beberapa budaya,
-            meskipun di tempat lain mungkin dianggap <span class="warna-beda">sebaliknya</span>. Tak hanya itu, kucing
-            hitam juga memiliki karakteristik yang menarik, seperti kepintaran tinggi, keahlian berburu yang
-            baik, serta kepribadian yang beragam, dari yang <span class="warna-beda">pendiam</span> hingga yang
-            <span class="warna-beda">manja</span>. Jangan ragu untuk memiliki kucing hitam sebagai hewan
-            peliharaan Anda!
+            <strong>
+            Kucing merupakan jenis hewan mamalia yang berasal dari <span class="warna-beda">keluarga Felidae.</span> 
+            Habitat kucing adalah di darat yang biasanya berbaur dengan manusia sebagai peliharaan 
+            dan ada juga yang hidup liar. Hewan ini merupakan binatang karnivora, kucing telah bersatu 
+            dengan kehidupan manusia sudah sekitar 6.000 tahun sebelum masehi, dari kerangka kucing di Pulau Siprus.
+             Dan pada saat ini, kucing adalah salah satu hewan peliharaan terpopuler di dunia.
+            </strong>
         </div>
-        <div class="column-container">
-            <!-- Gambar kucing -->
-            <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
-    
-            <!-- Tombol "Play Suara Kucing" -->
-            <button class="play-button" onclick="playSuaraKucing()">Putar Suara Kucing</button>
-        </div>
+        <button class="play-button" onclick="playSuaraKucing()">Putar Suara Kucing</button>
         <div>
             <!-- Tombol navigasi ke kiri sebagai gambar -->
-            <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Kembali" onclick="goBack()">
+            <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
 
             <!-- Tombol navigasi ke kanan sebagai gambar -->
-            <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Selanjutnya" onclick="goForward()">
+            <img class="navigation-button" src="asset/gambar/panah kanan.png" alt="Selanjutnya" onclick="goForward()">
         </div>
     </div>
     
 
     <!-- Elemen audio untuk memutar suara kucing -->
     <audio id="suaraKucing">
-        <source src="asset/music/" type="audio/mpeg">
+        <source src="asset/music/kucing.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 

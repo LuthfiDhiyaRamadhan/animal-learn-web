@@ -81,6 +81,10 @@
             object-fit: cover;
             color: #ffffff;
         }
+        .kuda-image {
+            width: 200px;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -91,7 +95,7 @@
     </div>
     <div class="quiz-container">
         <div class="question">Apakah nama hewan dibawah ini?</div>
-        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kuda">
+        <img class="kuda-image" src="asset/gambar/Kuda.png" alt="Gambar Kuda">
         <div class="answer-container">
             <button class="answer-option" onclick="checkAnswer(false)">Kucing</button>
             <button class="answer-option" onclick="checkAnswer(false)">Anjing</button>
@@ -118,7 +122,7 @@
                     }
                 });
                 // Suara ketika jawaban benar (ganti "suara_benar.mp3" dengan URL file audio yang sesuai)
-                new Audio('suara_benar.mp3').play();
+                new Audio('asset/music/benar.mp3').play();
             } else {
                 Swal.fire({
                     icon: 'error',
@@ -128,7 +132,7 @@
                     allowOutsideClick: false
                 });
                 // Suara ketika jawaban salah (ganti "suara_salah.mp3" dengan URL file audio yang sesuai)
-                new Audio('suara_salah.mp3').play();
+                new Audio('asset/music/salah.mp3').play();
             }
         }
     </script>

@@ -29,7 +29,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            max-width: 1000px;
+            max-width: 1100px;
             width: 80%;
             margin-top: 50px; /* Jarak ke atas */
             margin-bottom: 50px; /* Jarak ke bawah */
@@ -88,13 +88,18 @@
             background-color: #0056b3;
             transform: scale(1.1);
         }
-
+        .nav-button{
+            justify-content: center;
+            
+        }
         .navigation-button {
             padding: 10px 20px;
             text-decoration: none;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 5px;
+            width: 250px;
+            height: 200px;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
@@ -102,10 +107,17 @@
         .navigation-button:hover {
             transform: scale(1.05);
         }
+        .pronoun{
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            padding:20px;
+        }
     </style>
 </head>
 
 <body>
+    
     <div class="deskripsi-container">
         <div class="column-container">
             <div class="judul">Indonesia</div>
@@ -115,11 +127,14 @@
             <button class="play-button" onclick="playSuaraKucing('suara_kucing_indonesia.mp3')">
                 <i class="fas fa-play"></i>
             </button>
+            <div class="pronoun">
+                Kucing
+            </div>
         </div>
 
         <div class="column-container">
             <!-- Gambar kucing -->
-            <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+            <img class="kucing-image" src="asset/gambar/Kucing.png" alt="Gambar Kucing">
         </div>
 
         <div class="column-container">
@@ -130,16 +145,20 @@
             <button class="play-button" onclick="playSuaraKucing('suara_kucing_english.mp3')">
                 <i class="fas fa-play"></i>
             </button>
+            <div class="pronoun">
+                [kat]
+            </div>
+        </div>
+        <div class="nav-button">
+            <!-- Tombol navigasi ke kiri sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
+    
+            <!-- Tombol navigasi ke kanan sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/panah kanan.png" alt="Selanjutnya" onclick="goForward()">
         </div>
     </div>
 
-    <div>
-        <!-- Tombol navigasi ke kiri sebagai gambar -->
-        <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Kembali" onclick="goBack()">
-
-        <!-- Tombol navigasi ke kanan sebagai gambar -->
-        <img class="navigation-button" src="asset/gambar/welcome_image.png" alt="Selanjutnya" onclick="goForward()">
-    </div>
+    
 
     <!-- Elemen audio untuk memutar suara kucing -->
     <audio id="suaraKucing">
