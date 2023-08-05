@@ -63,18 +63,39 @@
         .answer-option:hover {
             background-color: #0056b3;
         }
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-button img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            color: #ffffff;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Tombol kembali ke menu.html -->
+    <div class="back-button" onclick="goBack()">
+        <img src="asset/gambar/welcome_image.png" alt="Kembali">
+    </div>
     <div class="quiz-container">
-        <div class="question">Apa ibu kota Indonesia?</div>
-        <img class="kucing-image" src="asset/gambar/welcome_image.png" alt="Gambar Kucing">
+        <div class="question">Hewan dibawah ini adalah hewan yang mempunyai kaki 4, <i>kecuali...</i></div>
         <div class="answer-container">
-            <button class="answer-option" onclick="checkAnswer(true)">Jakarta</button>
-            <button class="answer-option" onclick="checkAnswer(false)">Surabaya</button>
-            <button class="answer-option" onclick="checkAnswer(false)">Bandung</button>
-            <button class="answer-option" onclick="checkAnswer(false)">Medan</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Kucing</button>
+            <button class="answer-option" onclick="checkAnswer(true)">Ayam</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Harimau</button>
+            <button class="answer-option" onclick="checkAnswer(false)">Kuda</button>
         </div>
     </div>
 
@@ -92,7 +113,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         // Lanjutkan ke halaman berikutnya (ganti "halaman_berikutnya.html" dengan URL yang sesuai)
-                        window.location.href = "halaman_berikutnya.html";
+                        window.location.href = "soal4.html";
                     }
                 });
                 // Suara ketika jawaban benar (ganti "suara_benar.mp3" dengan URL file audio yang sesuai)
