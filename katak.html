@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deskripsi Harimau</title>
+    <title>Deskripsi Katak</title>
     <!-- Hubungkan fontawesome jika belum -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -60,12 +60,12 @@
             align-items: center;
         }
 
-        .harimau-image {
+        .katak-image {
             width: 200px;
             height: auto;
         }
 
-        /* Gaya untuk tombol "Play Suara Harimau" */
+        /* Gaya untuk tombol "Play Suara Katak" */
         .play-button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -104,18 +104,16 @@
 
 <body>
     <div class="deskripsi-container">
-        <div class="judul">Deskripsi Harimau</div>
-        <img class="harimau-image" src="asset/gambar/harimau.png" alt="Gambar Harimau">
+        <div class="judul">Deskripsi Katak</div>
+        <img class="katak-image" src="asset/gambar/katak.png" alt="Gambar Katak">
         <div class="deskripsi">
             <strong>
-                Harimau adalah anggota terbesar dari keluarga kucing  <span class="warna-beda">keluarga Felidae.</span> 
-                Harimau memiliki ciri loreng yang khas pada bulunya, berupa garis-garis vertikal gelap pada bulu oranye, dengan bulu bagian bawah berwarna putih. Harimau adalah pemangsa puncak,
-                mereka terutama memangsa ungulata seperti rusa dan babi. Harimau adalah hewan teritorial dan umumnya merupakan pemangsa soliter yang penyendiri,
-                tetapi tetap memiliki sisi sosial, mereka tetap tinggal di area-area yang berdekatan, untuk mendukung kebutuhan makanan dan membesarkan keturunannya.
-                Anak harimau tinggal bersama ibu mereka selama sekitar dua tahun, kemudian akan hidup mandiri dan meninggalkan daerah jelajah ibu mereka untuk membangun rumah mereka sendiri.
+                Katak adalah hewan amfibi atau hewan yang bertulang belakang. Dalam bahasa latin, katak juga disebut dengan <span class="warna-beda">Amphibia Anura.</span> 
+                di mana Amphibia berarti dua kehidupan dan Anura berarti tanpa ekor. Hal ini menunjukkan bahwa katak dapat hidup baik di air dan di darat.
+                Makanan katak adalah serangga seperti lalat dan ngengat, serta siput, siput, dan cacing. Mereka menggunakan lidah yang panjang dan air liur yang lengket untuk menangkap mangsa yang lewat.
             </strong>
         </div>
-        <button class="play-button" onclick="playSuaraHarimau()">Putar Suara Harimau</button>
+        <button class="play-button" onclick="playSuaraKatak()">Putar Suara Katak</button>
         <div>
             <!-- Tombol navigasi ke kiri sebagai gambar -->
             <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
@@ -126,17 +124,17 @@
     </div>
     
 
-    <!-- Elemen audio untuk memutar suara harimau -->
-    <audio id="suaraHarimau">
-        <source src="asset/music/harimau.mp3" type="audio/mpeg">
+    <!-- Elemen audio untuk memutar suara katak -->
+    <audio id="suaraKatak">
+        <source src="asset/music/katak.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        function playSuaraHarimau() {
-            const audio = document.getElementById('suaraHarimau');
+        function playSuaraKatak() {
+            const audio = document.getElementById('suaraKatak');
             audio.play().catch(error => {
-                console.error('Gagal memainkan suara harimau:', error);
+                console.error('Gagal memainkan suara katak:', error);
             });
         }
         function goBack() {
@@ -145,14 +143,14 @@
 
         // Function untuk navigasi ke halaman berikutnya
         function goForward() {
-            window.location.href = "harimau_inggris.html"; // Mengarahkan ke halaman harimau_inggris.html
+            window.location.href = "katak_inggris.html"; // Mengarahkan ke halaman katak_inggris.html
         }
 
         // Function untuk memutar suara harimau
-        function playSuaraHarimau() {
-            const audio = document.getElementById('suaraHarimau');
+        function playSuaraKatak() {
+            const audio = document.getElementById('suaraKatak');
             audio.play().catch(error => {
-                console.error('Gagal memainkan suara Harimau:', error);
+                console.error('Gagal memainkan suara Katak:', error);
             });
         }
     </script>

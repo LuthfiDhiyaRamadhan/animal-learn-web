@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deskripsi Harimau</title>
+    <title>Deskripsi Katak</title>
     <!-- Hubungkan fontawesome jika belum -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -26,13 +26,10 @@
 
         .deskripsi-container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 1500px;
-            width: 80%;
-            margin-top: 50px; /* Jarak ke atas */
-            margin-bottom: 50px; /* Jarak ke bawah */
+            
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .judul {
@@ -46,7 +43,6 @@
             font-size: 24px;
             color: #333;
             
-            margin-bottom: 20px;
         }
 
         .warna-beda {
@@ -55,33 +51,36 @@
 
         .column-container {
             display: flex;
-            gap: 50px;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        .harimau-image {
+        .katak-image {
             width: 200px;
             height: auto;
         }
 
-        /* Gaya untuk tombol "Play Suara Harimau" */
+        /* Gaya untuk tombol "Play Suara Katak" */
         .play-button {
-            padding: 10px 20px;
+            padding: 40px 40px;
             background-color: #007bff;
             color: #ffffff;
             text-decoration: none;
             border: none;
-            border-radius: 5px;
+            border-radius: 50%;
             font-size: 24px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: transform 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .play-button:hover {
             background-color: #0056b3;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .navigation-button {
             padding: 10px 20px;
@@ -89,8 +88,8 @@
             border: none;
             border-radius: 5px;
             font-size: 5px;
-            width: 200px;
-            height: 100px;
+            width: 100;
+            height: 50px;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
@@ -99,62 +98,106 @@
             transform: scale(1.05);
             
         }
+        .pronoun{
+            font-size: 24px;
+            color: #333;
+            
+            padding-top:10px;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1100px;
+            width: 80%;
+            margin-top: 50px; /* Jarak ke atas */
+            margin-bottom: 50px; /* Jarak ke bawah */
+            text-align: center;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .button{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+        }
     </style>
 </head>
 
 <body>
+    <div class="container">
     <div class="deskripsi-container">
-        <div class="judul">Deskripsi Harimau</div>
-        <img class="harimau-image" src="asset/gambar/harimau.png" alt="Gambar Harimau">
-        <div class="deskripsi">
-            <strong>
-                Harimau adalah anggota terbesar dari keluarga kucing  <span class="warna-beda">keluarga Felidae.</span> 
-                Harimau memiliki ciri loreng yang khas pada bulunya, berupa garis-garis vertikal gelap pada bulu oranye, dengan bulu bagian bawah berwarna putih. Harimau adalah pemangsa puncak,
-                mereka terutama memangsa ungulata seperti rusa dan babi. Harimau adalah hewan teritorial dan umumnya merupakan pemangsa soliter yang penyendiri,
-                tetapi tetap memiliki sisi sosial, mereka tetap tinggal di area-area yang berdekatan, untuk mendukung kebutuhan makanan dan membesarkan keturunannya.
-                Anak harimau tinggal bersama ibu mereka selama sekitar dua tahun, kemudian akan hidup mandiri dan meninggalkan daerah jelajah ibu mereka untuk membangun rumah mereka sendiri.
-            </strong>
+        <div class="column-container">
+            <div class="judul">Indonesia</div>
+            <div class="deskripsi">
+                Katak
+            </div>
+            <button class="play-button" onclick="playSuaraKatak('suara_katak_indonesia.mp3')">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="pronoun">
+                Katak
+            </div>
         </div>
-        <button class="play-button" onclick="playSuaraHarimau()">Putar Suara Harimau</button>
-        <div>
+
+        <div class="column-container">
+            <!-- Gambar katak-->
+            <img class="katak-image" src="asset/gambar/Katak.png" alt="Gambar Katak">
+        </div>
+
+        <div class="column-container">
+            <div class="judul">English</div>
+            <div class="deskripsi">
+                Frog
+            </div>
+            <button class="play-button" onclick="playSuaraKatak('asset/music/katak_inggris.mp3')">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="pronoun">
+                [frôɡ]
+
+            </div>
+        </div>
+        </div>
+        <div class="button">
             <!-- Tombol navigasi ke kiri sebagai gambar -->
             <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
-
+    
             <!-- Tombol navigasi ke kanan sebagai gambar -->
             <img class="navigation-button" src="asset/gambar/panah kanan.png" alt="Selanjutnya" onclick="goForward()">
         </div>
     </div>
     
+    
 
-    <!-- Elemen audio untuk memutar suara harimau -->
-    <audio id="suaraHarimau">
-        <source src="asset/music/harimau.mp3" type="audio/mpeg">
+    <!-- Elemen audio untuk memutar suara katak -->
+    <audio id="suaraKatak">
+        <source src="" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        function playSuaraHarimau() {
-            const audio = document.getElementById('suaraHarimau');
+        function playSuaraKatak(audioSrc) {
+            const audio = document.getElementById('suaraKatak');
+            audio.src = audioSrc;
             audio.play().catch(error => {
                 console.error('Gagal memainkan suara harimau:', error);
             });
         }
+
         function goBack() {
-            window.location.href = "belajar.html";
+            window.location.href = "Katak.html";
+            
         }
 
         // Function untuk navigasi ke halaman berikutnya
         function goForward() {
-            window.location.href = "harimau_inggris.html"; // Mengarahkan ke halaman harimau_inggris.html
-        }
-
-        // Function untuk memutar suara harimau
-        function playSuaraHarimau() {
-            const audio = document.getElementById('suaraHarimau');
-            audio.play().catch(error => {
-                console.error('Gagal memainkan suara Harimau:', error);
-            });
+            window.location.href = "anjing.html"; // Mengarahkan ke halaman anjing_inggris.html
         }
     </script>
 </body>
+
 </html>
