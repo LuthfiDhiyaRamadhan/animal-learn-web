@@ -42,17 +42,14 @@
         a {
             display: inline-block;
             padding: 1rem 2rem;
-            background-color: #ff8c00;
-            color: #fff;
+           
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
         a:hover {
-            background-color: #ff7f00;
             transform: scale(1.1);
         }
 
@@ -82,6 +79,10 @@
         #playButton:hover {
             background-color: #0056b3;
         }
+        .startButton{
+            width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 
@@ -89,7 +90,9 @@
     <header>
         <div class="welcome-container">
             <img class="welcome-image" src="asset/gambar/welcome_image.png" alt="Selamat Datang">
-            <a href="menu.html" id="startButton">Mulai</a>
+            <a href="menu.html">
+                <img class="startButton" src="asset/gambar/homebutton.png" alt="Button Belajar">
+            </a>
         </div>
     </header>
 

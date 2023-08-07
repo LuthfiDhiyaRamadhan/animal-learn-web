@@ -26,13 +26,7 @@
 
         .deskripsi-container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 1100px;
-            width: 80%;
-            margin-top: 50px; /* Jarak ke atas */
-            margin-bottom: 50px; /* Jarak ke bawah */
+            
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -48,7 +42,7 @@
         .deskripsi {
             font-size: 24px;
             color: #333;
-            margin-bottom: 20px;
+            
         }
 
         .warna-beda {
@@ -88,36 +82,53 @@
             background-color: #0056b3;
             transform: scale(1.1);
         }
-        .nav-button{
-            justify-content: center;
-            
-        }
         .navigation-button {
             padding: 10px 20px;
             text-decoration: none;
             border: none;
             border-radius: 5px;
             font-size: 5px;
-            width: 250px;
-            height: 200px;
+            width: 100;
+            height: 50px;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
 
         .navigation-button:hover {
             transform: scale(1.05);
+            
         }
         .pronoun{
             font-size: 24px;
             color: #333;
-            margin-bottom: 20px;
-            padding:20px;
+            
+            padding-top:10px;
+        }
+        .container{
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1100px;
+            width: 80%;
+            margin-top: 50px; /* Jarak ke atas */
+            margin-bottom: 50px; /* Jarak ke bawah */
+            text-align: center;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .button{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
         }
     </style>
 </head>
 
 <body>
-    
+    <div class="container">
     <div class="deskripsi-container">
         <div class="column-container">
             <div class="judul">Indonesia</div>
@@ -149,7 +160,8 @@
                 [kat]
             </div>
         </div>
-        <div class="nav-button">
+        </div>
+        <div class="button">
             <!-- Tombol navigasi ke kiri sebagai gambar -->
             <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
     
@@ -157,7 +169,7 @@
             <img class="navigation-button" src="asset/gambar/panah kanan.png" alt="Selanjutnya" onclick="goForward()">
         </div>
     </div>
-
+    
     
 
     <!-- Elemen audio untuk memutar suara kucing -->
@@ -182,7 +194,7 @@
 
         // Function untuk navigasi ke halaman berikutnya
         function goForward() {
-            window.history.back(); // Mengarahkan ke halaman kucing_inggris.html
+            window.location.href = "anjing.html"; // Mengarahkan ke halaman kucing_inggris.html
         }
     </script>
 </body>
