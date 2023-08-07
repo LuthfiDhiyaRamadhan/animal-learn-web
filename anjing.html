@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deskripsi Anjing</title>
+    <!-- Hubungkan fontawesome jika belum -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Gaya CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('asset/gambar/background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .deskripsi-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1500px;
+            width: 80%;
+            margin-top: 50px; /* Jarak ke atas */
+            margin-bottom: 50px; /* Jarak ke bawah */
+        }
+
+        .judul {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .deskripsi {
+            font-size: 24px;
+            color: #333;
+            
+            margin-bottom: 20px;
+        }
+
+        .warna-beda {
+            color: #007bff;
+        }
+
+        .column-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .anjing-image {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Gaya untuk tombol "Play Suara Anjing" */
+        .play-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .play-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .navigation-button {
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 5px;
+            width: 200px;
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .navigation-button:hover {
+            transform: scale(1.05);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="deskripsi-container">
+        <div class="judul">Deskripsi Anjing</div>
+        <img class="anjing-image" src="asset/gambar/Anjing.png" alt="Gambar Anjing">
+        <div class="deskripsi">
+            <strong>
+            Anjing adalah hewa mamalia yang telah mengalami domestikasi dari serigala sejak <span class="warna-beda"> 15.000 tahun yang lalu atau mungkin
+            sudah sejak 100.000 tahun yang lalu.</span> berdasarkan bukti genetik berupa penemuan fosil dan tes DNA. Anjing telah berkembang 
+            menjadi ratusan ras dengan berbagai macam variasi, mulai dari ukuran anjing dan warna rambut anjing yang beraneka ragam.
+            Hewan ini merupakan jenis hewan karnivora. Anjing merupakan hewan sosial sama seperti halnya manusia. Kedekatan pola prilaku 
+            anjing dengan manusia menjadikan anjing bisa dilati, diajak bermain, tinggal bersama manusia, dan diajak bersosialisasi dengan 
+            manusia dan anjing yang lain. 
+            </strong>
+        </div>
+        <button class="play-button" onclick="playSuaraAnjing()">Putar Suara Anjing</button>
+        <div>
+            <!-- Tombol navigasi ke kiri sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/panah kiri.png" alt="Kembali" onclick="goBack()">
+
+            <!-- Tombol navigasi ke kanan sebagai gambar -->
+            <img class="navigation-button" src="asset/gambar/panah kanan.png" alt="Selanjutnya" onclick="goForward()">
+        </div>
+    </div>
+    
+
+    <!-- Elemen audio untuk memutar suara anjing -->
+    <audio id="suaraAnjing">
+        <source src="asset/music/anjing.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playSuaraAnjing() {
+            const audio = document.getElementById('suaraAnjing');
+            audio.play().catch(error => {
+                console.error('Gagal memainkan suara anjing:', error);
+            });
+        }
+        function goBack() {
+            window.location.href = "belajar.html";
+        }
+
+        // Function untuk navigasi ke halaman berikutnya
+        function goForward() {
+            window.location.href = "anjing_inggris.html"; // Mengarahkan ke halaman anjing_inggris.html
+        }
+
+        // Function untuk memutar suara anjing
+        function playSuaraKucing() {
+            const audio = document.getElementById('suaraAnjing');
+            audio.play().catch(error => {
+                console.error('Gagal memainkan suara anjing:', error);
+            });
+        }
+    </script>
+</body>
+
+</html>
