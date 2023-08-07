@@ -105,6 +105,9 @@
     <!-- Hubungkan SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <script>
+        function goBack() {
+            window.location.href = "menu.html";
+        }
         function checkAnswer(isCorrect) {
             if (isCorrect) {
                 Swal.fire({

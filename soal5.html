@@ -110,7 +110,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script>
         // Function untuk memutar suara hewan (ganti "suara_hewan.mp3" dengan URL file audio yang sesuai)
-
+        function goBack() {
+            window.location.href = "menu.html";
+        }
         function checkAnswer(isCorrect) {
             if (isCorrect) {
                 Swal.fire({

@@ -128,7 +128,9 @@
         function playSuaraHewan() {
             new Audio('asset/music/ayam.mp3').play();
         }
-
+        function goBack() {
+            window.location.href = "menu.html";
+        }
         function checkAnswer(isCorrect) {
             if (isCorrect) {
                 Swal.fire({
