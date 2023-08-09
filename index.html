@@ -68,18 +68,19 @@
             top: 20px;
             left: 20px;
             padding: 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
             cursor: pointer;
         }
 
-        #playButton:hover {
-            background-color: #0056b3;
+        #playButton img {
+            width: 50px;
+            height: auto;
         }
-        .startButton{
+
+        #playButton img:hover {
+            transform: scale(1.1);
+        }
+
+        .startButton {
             width: 100px;
             height: auto;
         }
@@ -102,12 +103,12 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Tombol "Play Music" di pojok kiri atas -->
-    <button id="playButton">▶️</button>
+    <!-- Tombol gambar untuk memutar musik di pojok kiri atas -->
+    <div id="playButton" onclick="playMusic()">
+        <img src="asset/gambar/button-music.png" alt="Play Music">
+    </div>
 
     <script>
-        const startButton = document.getElementById('startButton');
-        const playButton = document.getElementById('playButton');
         const backgroundMusic = document.getElementById('backgroundMusic');
 
         // Function untuk memainkan musik saat tombol "Play" diklik
@@ -117,12 +118,7 @@
                 // Tidak semua browser mengizinkan autoplay tanpa interaksi pengguna
                 console.error('Gagal memainkan musik:', error);
             });
-            // Sembunyikan tombol "Play" setelah musik dimainkan
-            playButton.style.display = "none";
         }
-
-        // Tambahkan event listener untuk tombol "Play Music"
-        playButton.addEventListener('click', playMusic);
     </script>
 </body>
 

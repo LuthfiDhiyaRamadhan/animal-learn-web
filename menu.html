@@ -38,13 +38,11 @@
             height: auto;
             margin-top: 40px;
             margin-bottom: 20px;
-            
         }
 
         a {
             display: inline-block;
             padding: 1rem 2rem;
-           
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
@@ -64,45 +62,48 @@
             }
         }
 
-        /* Gaya untuk tombol "Play Music" di pojok kiri atas */
-        #playButton {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        #playButton:hover {
-            background-color: #0056b3;
+        .back-button img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            color: #ffffff;
         }
-        .button-belajar{
+        .button-belajar {
             width: 250px;
             height: auto;
             margin-top: -50px;
             padding: 20px;
         }
-        .button-bermain{
+        .button-bermain {
             width: 250px;
             height: auto;
             margin-top: -50px;
             padding: 20px;
         }
-        .button-music{
-            width: 250px;
-            height: auto;
+        .back-button:hover {
+            transform: scale(1.1);
         }
-        
+
     </style>
 </head>
 
 <body>
-    <header>
+        <!-- Tombol kembali ke index.html -->
+        <div class="back-button" onclick="goBack()">
+            <img src="asset/gambar/homebutton.png" alt="Kembali">
+        </div>
         <div class="welcome-container">
             <img class="welcome-image" src="asset/gambar/welcome_image.png" alt="Selamat Datang">
             <a href="belajar.html">
@@ -112,7 +113,7 @@
                 <img class="button-bermain" src="asset/gambar/button-bermain.png" alt="Button Bermain">
             </a>
         </div>
-    </header>
+    
 
     <!-- Elemen audio untuk memutar musik -->
     <audio id="backgroundMusic" loop autoplay>
@@ -120,27 +121,22 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Tombol "Play Music" di pojok kiri atas -->
-    <button id="playButton">▶️</button>
-
     <script>
-        const startButton = document.getElementById('startButton');
-        const playButton = document.getElementById('playButton');
+        function goBack() {
+            window.location.href = "index.html";
+        }
         const backgroundMusic = document.getElementById('backgroundMusic');
-
-        // Function untuk memainkan musik saat tombol "Play" diklik
+        
+        // Function untuk memainkan musik saat halaman dimuat
         function playMusic() {
             backgroundMusic.play().catch(error => {
                 // Handle jika musik tidak dapat diplay secara otomatis
-                // Tidak semua browser mengizinkan autoplay tanpa interaksi pengguna
                 console.error('Gagal memainkan musik:', error);
             });
-            // Sembunyikan tombol "Play" setelah musik dimainkan
-            playButton.style.display = "none";
         }
-
-        // Tambahkan event listener untuk tombol "Play Music"
-        playButton.addEventListener('click', playMusic);
+        
+        // Panggil function playMusic saat halaman dimuat
+        window.onload = playMusic;
     </script>
 </body>
 
